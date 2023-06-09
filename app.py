@@ -4,9 +4,12 @@ import tensorflow as tf
 import gdown
 import numpy as np
 from flask import Flask, jsonify, request, redirect
+from flask_cors import CORS
+from flask import Flask, jsonify, request, redirect
 from sklearn.preprocessing import MultiLabelBinarizer
 
 app = Flask(__name__)
+CORS(app)
 
 # Load the model
 model = tf.keras.models.load_model('model.h5')
